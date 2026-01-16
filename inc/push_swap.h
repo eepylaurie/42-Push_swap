@@ -6,7 +6,7 @@
 /*   By: lmatthes <lmatthes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 21:43:32 by lmatthes          #+#    #+#             */
-/*   Updated: 2026/01/16 22:16:42 by lmatthes         ###   ########.fr       */
+/*   Updated: 2026/01/16 22:59:02 by lmatthes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,13 @@ typedef struct s_node
 	struct s_node	*next;
 	struct s_node	*prev;
 }	t_node;
+
+typedef struct s_stack
+{
+	t_node	*head;
+	t_node	*tail;
+	int		size;
+}	t_stack;
 
 // function prototypes
 
