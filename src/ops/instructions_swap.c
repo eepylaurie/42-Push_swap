@@ -6,7 +6,7 @@
 /*   By: lmatthes <lmatthes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/17 18:43:34 by lmatthes          #+#    #+#             */
-/*   Updated: 2026/01/17 19:35:54 by lmatthes         ###   ########.fr       */
+/*   Updated: 2026/01/17 23:40:14 by lmatthes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 static void	op_swap(t_stack *s)
 {
-	t_node *first;
-	t_node *second;
-	t_node *third;
+	t_node	*first;
+	t_node	*second;
+	t_node	*third;
 
 	if (!s || s->size < 2)
 		return ;
