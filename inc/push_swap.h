@@ -6,7 +6,7 @@
 /*   By: lmatthes <lmatthes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 21:43:32 by lmatthes          #+#    #+#             */
-/*   Updated: 2026/01/17 19:58:49 by lmatthes         ###   ########.fr       */
+/*   Updated: 2026/01/17 20:29:49 by lmatthes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,10 @@ void	ss(t_stack *a, t_stack *b);
 // push instructions
 void	pa(t_stack *a, t_stack *b);
 void	pb(t_stack *a, t_stack *b);
+
+// rotate instructions
+void	ra(t_stack *a);
+void	rb(t_stack *b);
+void	rr(t_stack *a, t_stack *b);
 
 #endif
