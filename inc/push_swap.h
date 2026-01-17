@@ -6,7 +6,7 @@
 /*   By: lmatthes <lmatthes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 21:43:32 by lmatthes          #+#    #+#             */
-/*   Updated: 2026/01/17 18:22:20 by lmatthes         ###   ########.fr       */
+/*   Updated: 2026/01/17 19:31:52 by lmatthes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ typedef struct s_stack
 	int		size;
 }	t_stack;
 
-// function prototypes
+// stack functions
 void	stack_init(t_stack *s);
 t_node	*node_new(int val);
 void	stack_push_top(t_stack *s, t_node *n);
@@ -40,5 +40,10 @@ t_node	*stack_pop_top(t_stack *s);
 void	stack_add_bottom(t_stack *s, t_node *n);
 int		stack_is_sorted(t_stack *s);
 void	stack_clear(t_stack *s);
+
+// instructions
+void	sa(t_stack *a);
+void	sb(t_stack *b);
+void	ss(t_stack *a, t_stack *b);
 
 #endif
