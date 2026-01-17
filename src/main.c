@@ -6,7 +6,7 @@
 /*   By: lmatthes <lmatthes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/17 15:20:22 by lmatthes          #+#    #+#             */
-/*   Updated: 2026/01/17 18:04:46 by lmatthes         ###   ########.fr       */
+/*   Updated: 2026/01/17 18:19:38 by lmatthes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,15 @@ int	main(void)
 	stack_push_top(&a, node_new(2));
 	stack_push_top(&a, node_new(1));
 	print_stack(&a);
+	printf("sorted? %d\n", stack_is_sorted(&a));
 	tmp = stack_pop_top(&a);
 	free(tmp);
 	tmp = stack_pop_top(&a);
 	free(tmp);
 	print_stack(&a);
+	printf("sorted? %d\n", stack_is_sorted(&a));
 	stack_add_bottom(&a, node_new(9));
 	print_stack(&a);
+	printf("sorted? %d\n", stack_is_sorted(&a));
 	return (0);
 }
