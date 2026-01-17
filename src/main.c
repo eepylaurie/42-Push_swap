@@ -6,7 +6,7 @@
 /*   By: lmatthes <lmatthes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/17 15:20:22 by lmatthes          #+#    #+#             */
-/*   Updated: 2026/01/17 19:38:51 by lmatthes         ###   ########.fr       */
+/*   Updated: 2026/01/17 20:11:51 by lmatthes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,14 +31,22 @@ static void	print_stack(t_stack *s)
 int	main(void)
 {
 	t_stack	a;
+	t_stack	b;
 	
 	stack_init(&a);
+	stack_init(&b);
 	stack_push_top(&a, node_new(3));
 	stack_push_top(&a, node_new(2));
 	stack_push_top(&a, node_new(1));
 	print_stack(&a);
-	sa(&a);
+	print_stack(&b);
+	pb(&a, &b);
 	print_stack(&a);
+	print_stack(&b);
+	pa(&a, &b);
+	print_stack(&a);
+	print_stack(&b);
 	stack_clear(&a);
+	stack_clear(&b);
 	return (0);
 }
