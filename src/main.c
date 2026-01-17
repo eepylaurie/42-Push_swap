@@ -6,7 +6,7 @@
 /*   By: lmatthes <lmatthes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/17 15:20:22 by lmatthes          #+#    #+#             */
-/*   Updated: 2026/01/17 20:34:27 by lmatthes         ###   ########.fr       */
+/*   Updated: 2026/01/17 20:53:44 by lmatthes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,11 @@ int	main(void)
 	stack_push_top(&b, node_new(1));
 	print_stack(&a);
 	print_stack(&b);
-	ra(&a);
-	ra(&b);
+	rra(&a);
+	rrb(&b);
 	print_stack(&a);
 	print_stack(&b);
-	rr(&a, &b);
+	rrr(&a, &b);
 	print_stack(&a);
 	print_stack(&b);
 	stack_clear(&a);
