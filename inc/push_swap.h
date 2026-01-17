@@ -6,7 +6,7 @@
 /*   By: lmatthes <lmatthes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 21:43:32 by lmatthes          #+#    #+#             */
-/*   Updated: 2026/01/17 15:34:12 by lmatthes         ###   ########.fr       */
+/*   Updated: 2026/01/17 15:42:45 by lmatthes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,6 @@ typedef struct s_stack
 
 // function prototypes
 void	stack_init(t_stack *s);
+t_node	*node_new(int value);
 
 #endif
