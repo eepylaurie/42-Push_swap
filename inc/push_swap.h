@@ -6,7 +6,7 @@
 /*   By: lmatthes <lmatthes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 21:43:32 by lmatthes          #+#    #+#             */
-/*   Updated: 2026/01/17 17:33:42 by lmatthes         ###   ########.fr       */
+/*   Updated: 2026/01/17 17:44:11 by lmatthes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,6 @@ typedef struct s_stack
 void	stack_init(t_stack *s);
 t_node	*node_new(int val);
 void	stack_push_top(t_stack *s, t_node *n);
+t_node	*stack_pop_top(t_stack *s);
 
 #endif
