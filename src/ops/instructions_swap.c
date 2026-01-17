@@ -6,7 +6,7 @@
 /*   By: lmatthes <lmatthes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/17 18:43:34 by lmatthes          #+#    #+#             */
-/*   Updated: 2026/01/17 19:30:58 by lmatthes         ###   ########.fr       */
+/*   Updated: 2026/01/17 19:35:54 by lmatthes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,23 @@ static void	op_swap(t_stack *s)
 	else
 		s->bot = first;
 	s->top = second;
+}
+
+void	sa(t_stack *a)
+{
+	op_swap(a);
+	write(1, "sa\n", 3);
+}
+
+void	sb(t_stack *b)
+{
+	op_swap(b);
+	write(1, "sb\n", 3);
+}
+
+void	ss(t_stack *a, t_stack *b)
+{
+	op_swap(a);
+	op_swap(b);
+	write(1, "ss\n", 3);
 }
