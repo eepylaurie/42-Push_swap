@@ -6,7 +6,7 @@
 /*   By: lmatthes <lmatthes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 21:43:32 by lmatthes          #+#    #+#             */
-/*   Updated: 2026/01/17 23:24:38 by lmatthes         ###   ########.fr       */
+/*   Updated: 2026/01/18 20:12:07 by lmatthes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,10 +62,8 @@ void	rrr(t_stack *a, t_stack *b);
 
 // parsing
 int		atoi_strict(const char *s, int *ok);
-void	free_split(char **arr);
-char	**split_args(int argc, char **argv);
+int		atoi_strict_span(const char *p, size_t len, int *ok);
 void	check_duplicates(const int *arr, int n);
-void	parse_args(int argc, char **argv, t_stack *a);
 
 // error
 void	error_exit(void);
