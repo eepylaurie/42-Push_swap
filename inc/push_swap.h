@@ -6,7 +6,7 @@
 /*   By: lmatthes <lmatthes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 21:43:32 by lmatthes          #+#    #+#             */
-/*   Updated: 2026/01/19 16:35:03 by lmatthes         ###   ########.fr       */
+/*   Updated: 2026/01/19 18:02:34 by lmatthes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,5 +71,8 @@ void	parse_args(int argc, char **argv, t_stack *a);
 
 // error
 void	error_exit(void);
+
+// sorting
+void	sort_three(t_stack *a);
 
 #endif
