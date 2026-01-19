@@ -6,7 +6,7 @@
 /*   By: lmatthes <lmatthes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 21:43:32 by lmatthes          #+#    #+#             */
-/*   Updated: 2026/01/19 18:02:34 by lmatthes         ###   ########.fr       */
+/*   Updated: 2026/01/19 19:12:06 by lmatthes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ int		stack_is_sorted(t_stack *s);
 void	stack_clear(t_stack *s);
 int		is_sorted(t_stack *a);
 void	index_stack(t_stack *a);
+int		stack_len(t_stack *s);
 
 // swap instructions
 void	sa(t_stack *a);
@@ -74,5 +75,7 @@ void	error_exit(void);
 
 // sorting
 void	sort_three(t_stack *a);
+void	bring_index_to_top(t_stack *a, int target);
+void	sort_five(t_stack *a, t_stack *b);
 
 #endif
