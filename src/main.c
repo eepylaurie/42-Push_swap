@@ -6,7 +6,7 @@
 /*   By: lmatthes <lmatthes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/17 15:20:22 by lmatthes          #+#    #+#             */
-/*   Updated: 2026/01/19 18:18:05 by lmatthes         ###   ########.fr       */
+/*   Updated: 2026/01/19 19:17:20 by lmatthes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,10 @@ int	main(int argc, char **argv)
 	if (is_sorted(&a))
 		return (0);
 	index_stack(&a);
-	sort_three(&a);
+	if (stack_len(&a) <= 3)
+		sort_three(&a);
+	else
+		sort_five(&a, &b);
 	stack_clear(&a);
 	stack_clear(&b);
 	return (0);
