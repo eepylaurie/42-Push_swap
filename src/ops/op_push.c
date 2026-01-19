@@ -1,42 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   instructions_rotate.c                              :+:      :+:    :+:   */
+/*   op_push.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lmatthes <lmatthes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/17 20:14:50 by lmatthes          #+#    #+#             */
-/*   Updated: 2026/01/17 20:29:03 by lmatthes         ###   ########.fr       */
+/*   Created: 2026/01/17 19:42:31 by lmatthes          #+#    #+#             */
+/*   Updated: 2026/01/19 22:20:07 by lmatthes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	op_rotate(t_stack *s)
+static void	op_push(t_stack *src, t_stack *dst)
 {
 	t_node	*n;
 
-	if (!s || s->size < 2)
+	if (!src || src->size == 0)
 		return ;
-	n = stack_pop_top(s);
-	stack_add_bottom(s, n);
+	n = stack_pop_top(src);
+	stack_push_top(dst, n);
 }
 
-void	ra(t_stack *a)
+void	op_pa(t_stack *a, t_stack *b)
 {
-	op_rotate(a);
-	write(1, "ra\n", 3);
+	op_push(b, a);
+	write(1, "pa\n", 3);
 }
 
-void	rb(t_stack *b)
+void	op_pb(t_stack *a, t_stack *b)
 {
-	op_rotate(b);
-	write(1, "rb\n", 3);
-}
-
-void	rr(t_stack *a, t_stack *b)
-{
-	op_rotate(a);
-	op_rotate(b);
-	write(1, "rr\n", 3);
+	op_push(a, b);
+	write(1, "pb\n", 3);
 }

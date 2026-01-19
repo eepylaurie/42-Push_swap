@@ -1,20 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   chunk_size.c                                       :+:      :+:    :+:   */
+/*   op_rotate.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lmatthes <lmatthes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/19 21:00:01 by lmatthes          #+#    #+#             */
-/*   Updated: 2026/01/19 21:01:31 by lmatthes         ###   ########.fr       */
+/*   Created: 2026/01/17 20:14:50 by lmatthes          #+#    #+#             */
+/*   Updated: 2026/01/19 22:20:53 by lmatthes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	chunk_size(int n)
+static void	op_rotate(t_stack *s)
 {
-	if (n <= 100)
-		return (20);
-	return (45);
+	t_node	*n;
+
+	if (!s || s->size < 2)
+		return ;
+	n = stack_pop_top(s);
+	stack_add_bottom(s, n);
+}
+
+void	op_ra(t_stack *a)
+{
+	op_rotate(a);
+	write(1, "ra\n", 3);
+}
+
+void	op_rb(t_stack *b)
+{
+	op_rotate(b);
+	write(1, "rb\n", 3);
+}
+
+void	op_rr(t_stack *a, t_stack *b)
+{
+	op_rotate(a);
+	op_rotate(b);
+	write(1, "rr\n", 3);
 }

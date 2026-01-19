@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   atoi_strict_span.c                                 :+:      :+:    :+:   */
+/*   parse_atoi_strict_span.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lmatthes <lmatthes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/18 19:48:08 by lmatthes          #+#    #+#             */
-/*   Updated: 2026/01/18 20:19:17 by lmatthes         ###   ########.fr       */
+/*   Updated: 2026/01/19 22:53:05 by lmatthes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ static int	parse_digits(const char *p, size_t len, size_t i, long long sign)
 	return ((int)(sign * res));
 }
 
-int	atoi_strict_span(const char *p, size_t len, int *ok)
+int	parse_atoi_strict_span(const char *p, size_t len, int *ok)
 {
 	size_t		i;
 	long long	sign;

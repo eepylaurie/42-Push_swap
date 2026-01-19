@@ -1,32 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_duplicates.c                                 :+:      :+:    :+:   */
+/*   sort_chunk_chunksize.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lmatthes <lmatthes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/17 22:55:25 by lmatthes          #+#    #+#             */
-/*   Updated: 2026/01/17 23:11:39 by lmatthes         ###   ########.fr       */
+/*   Created: 2026/01/19 21:00:01 by lmatthes          #+#    #+#             */
+/*   Updated: 2026/01/19 22:56:20 by lmatthes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	check_duplicates(const int *arr, int n)
+int	sort_chunk_chunksize(int n)
 {
-	int	i;
-	int	j;
-
-	i = 0;
-	while (i < n)
-	{
-		j = i + 1;
-		while (j < n)
-		{
-			if (arr[i] == arr[j])
-				error_exit();
-			j++;
-		}
-		i++;
-	}
+	if (n <= 100)
+		return (20);
+	return (45);
 }

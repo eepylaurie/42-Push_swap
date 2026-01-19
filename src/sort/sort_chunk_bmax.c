@@ -1,47 +1,56 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   bring_to_top.c                                     :+:      :+:    :+:   */
+/*   sort_chunk_bmax.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lmatthes <lmatthes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/19 18:36:26 by lmatthes          #+#    #+#             */
-/*   Updated: 2026/01/19 19:10:59 by lmatthes         ###   ########.fr       */
+/*   Created: 2026/01/19 19:24:48 by lmatthes          #+#    #+#             */
+/*   Updated: 2026/01/19 23:02:42 by lmatthes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	pos_of_index(t_stack *a, int target)
+int	sort_chunk_pos_of_max_index(t_stack *b)
 {
 	int		pos;
+	int		best_pos;
+	int		best_idx;
 	t_node	*cur;
 
 	pos = 0;
-	cur = a->top;
+	best_pos = 0;
+	best_idx = -1;
+	cur = b->top;
 	while (cur)
 	{
-		if (cur->idx == target)
-			return (pos);
+		if (cur->idx > best_idx)
+		{
+			best_idx = cur->idx;
+			best_pos = pos;
+		}
 		pos++;
 		cur = cur->next;
 	}
-	return (-1);
+	return (best_pos);
 }
 
-void	bring_index_to_top(t_stack *a, int target)
+void	sort_chunk_bring_pos_to_top_b(t_stack *b, int pos)
 {
-	int	pos;
 	int	len;
+	int	r;
 
-	pos = pos_of_index(a, target);
-	len = stack_len(a);
-	if (pos < 0)
+	len = stack_len(b);
+	if (len < 2 || pos < 0 || pos >= len)
 		return ;
 	if (pos <= len / 2)
 		while (pos-- > 0)
-			ra(a);
+			op_rb(b);
 	else
-		while (pos++ < len)
-			rra(a);
+	{
+		r = len - pos;
+		while (r-- > 0)
+			op_rrb(b);
+	}
 }

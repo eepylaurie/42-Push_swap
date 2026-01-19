@@ -6,7 +6,7 @@
 /*   By: lmatthes <lmatthes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/18 20:22:11 by lmatthes          #+#    #+#             */
-/*   Updated: 2026/01/19 16:04:00 by lmatthes         ###   ########.fr       */
+/*   Updated: 2026/01/19 22:52:07 by lmatthes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,10 @@ static int	scan_one_arg(const char *s, t_stack *a)
 		start = j;
 		while (s[j] && !ft_isspace(s[j]))
 			j++;
-		val = atoi_strict_span(s + start, j - start, &ok);
+		val = parse_atoi_strict_span(s + start, j - start, &ok);
 		if (!ok)
 			error_exit();
-		stack_add_bottom(a, node_new(val));
+		stack_add_bottom(a, stack_node_new(val));
 		found = 1;
 	}
 	return (found);
@@ -65,6 +65,6 @@ void	parse_args(int argc, char **argv, t_stack *a)
 	if (!found_any)
 		error_exit();
 	arr = stack_to_array(a, &n);
-	check_duplicates(arr, n);
+	parse_check_duplicates(arr, n);
 	free(arr);
 }

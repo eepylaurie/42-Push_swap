@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_three.c                                       :+:      :+:    :+:   */
+/*   sort_small_three.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lmatthes <lmatthes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 18:02:50 by lmatthes          #+#    #+#             */
-/*   Updated: 2026/01/19 18:09:45 by lmatthes         ###   ########.fr       */
+/*   Updated: 2026/01/19 22:59:53 by lmatthes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static int	last_index(t_stack *a)
 	return (cur->idx);
 }
 
-void	sort_three(t_stack *a)
+void	sort_small_three(t_stack *a)
 {
 	int	x;
 	int	y;
@@ -34,19 +34,19 @@ void	sort_three(t_stack *a)
 	if (x < y && y < z)
 		return ;
 	if (x > y && y < z && x < z)
-		sa(a);
+		op_sa(a);
 	else if (x > y && y > z)
 	{
-		sa(a);
-		rra(a);
+		op_sa(a);
+		op_rra(a);
 	}
 	else if (x > y && y < z && x > z)
-		ra(a);
+		op_ra(a);
 	else if (x < y && y > z && x < z)
 	{
-		sa(a);
-		ra(a);
+		op_sa(a);
+		op_ra(a);
 	}
 	else if (x < y && y > z && x > z)
-		rra(a);
+		op_rra(a);
 }

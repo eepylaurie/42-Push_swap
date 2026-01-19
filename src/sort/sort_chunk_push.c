@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_chunks.c                                      :+:      :+:    :+:   */
+/*   sort_chunk_push.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lmatthes <lmatthes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 21:01:45 by lmatthes          #+#    #+#             */
-/*   Updated: 2026/01/19 21:05:00 by lmatthes         ###   ########.fr       */
+/*   Updated: 2026/01/19 23:03:17 by lmatthes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static int	half_chunk(int chunk)
 	return (chunk / 2);
 }
 
-void	push_chunks(t_stack *a, t_stack *b)
+void	sort_chunk_push(t_stack *a, t_stack *b)
 {
 	int	n;
 	int	chunk;
@@ -25,21 +25,21 @@ void	push_chunks(t_stack *a, t_stack *b)
 	int	pushed;
 
 	n = stack_len(a);
-	chunk = chunk_size(n);
+	chunk = sort_chunk_chunksize(n);
 	limit = chunk;
 	pushed = 0;
 	while (pushed < n)
 	{
 		if (a->top->idx < limit)
 		{
-			pb(a, b);
+			op_pb(a, b);
 			pushed++;
 			if (b->top->idx < (limit - half_chunk(chunk)))
-				rb(b);
+				op_rb(b);
 			if (pushed == limit)
 				limit += chunk;
 		}
 		else
-			ra(a);
+			op_ra(a);
 	}
 }

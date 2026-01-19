@@ -6,7 +6,7 @@
 /*   By: lmatthes <lmatthes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 21:43:32 by lmatthes          #+#    #+#             */
-/*   Updated: 2026/01/19 21:05:41 by lmatthes         ###   ########.fr       */
+/*   Updated: 2026/01/19 22:49:46 by lmatthes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,54 +34,49 @@ typedef struct s_stack
 
 // stack functions
 void	stack_init(t_stack *s);
-t_node	*node_new(int val);
+t_node	*stack_node_new(int val);
 void	stack_push_top(t_stack *s, t_node *n);
 t_node	*stack_pop_top(t_stack *s);
 void	stack_add_bottom(t_stack *s, t_node *n);
 int		stack_is_sorted(t_stack *s);
 void	stack_clear(t_stack *s);
-int		is_sorted(t_stack *a);
-void	index_stack(t_stack *a);
+void	stack_index(t_stack *a);
 int		stack_len(t_stack *s);
+int		*stack_to_array(t_stack *a, int *n);
 
-// swap instructions
-void	sa(t_stack *a);
-void	sb(t_stack *b);
-void	ss(t_stack *a, t_stack *b);
+// operations
+void	op_sa(t_stack *a);
+void	op_sb(t_stack *b);
+void	op_ss(t_stack *a, t_stack *b);
 
-// push instructions
-void	pa(t_stack *a, t_stack *b);
-void	pb(t_stack *a, t_stack *b);
+void	op_pa(t_stack *a, t_stack *b);
+void	op_pb(t_stack *a, t_stack *b);
 
-// rotate instructions
-void	ra(t_stack *a);
-void	rb(t_stack *b);
-void	rr(t_stack *a, t_stack *b);
+void	op_ra(t_stack *a);
+void	op_rb(t_stack *b);
+void	op_rr(t_stack *a, t_stack *b);
 
-// reverse rotate instructions
-void	rra(t_stack *a);
-void	rrb(t_stack *b);
-void	rrr(t_stack *a, t_stack *b);
+void	op_rra(t_stack *a);
+void	op_rrb(t_stack *b);
+void	op_rrr(t_stack *a, t_stack *b);
 
 // parsing
-int		atoi_strict(const char *s, int *ok);
-int		atoi_strict_span(const char *p, size_t len, int *ok);
-void	check_duplicates(const int *arr, int n);
-int		*stack_to_array(t_stack *a, int *n);
+int		parse_atoi_strict_span(const char *p, size_t len, int *ok);
+void	parse_check_duplicates(const int *arr, int n);
 void	parse_args(int argc, char **argv, t_stack *a);
 
 // error
 void	error_exit(void);
 
 // sorting
-void	sort_three(t_stack *a);
-void	bring_index_to_top(t_stack *a, int target);
-void	sort_five(t_stack *a, t_stack *b);
-int		pos_of_max_index(t_stack *b);
-void	bring_pos_to_top_b(t_stack *b, int pos);
-void	pull_back_max(t_stack *a, t_stack *b);
-int		chunk_size(int n);
-void	push_chunks(t_stack *a, t_stack *b);
-void	chunk_sort(t_stack *a, t_stack *b);
+void	sort_small_three(t_stack *a);
+void	sort_chunk_bring_index_to_top(t_stack *a, int target);
+void	sort_small_five(t_stack *a, t_stack *b);
+int		sort_chunk_pos_of_max_index(t_stack *b);
+void	sort_chunk_bring_pos_to_top_b(t_stack *b, int pos);
+void	sort_chunk_pullback(t_stack *a, t_stack *b);
+int		sort_chunk_chunksize(int n);
+void	sort_chunk_push(t_stack *a, t_stack *b);
+void	sort_chunk(t_stack *a, t_stack *b);
 
 #endif

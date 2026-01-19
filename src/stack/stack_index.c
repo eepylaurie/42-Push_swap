@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   index_stack.c                                      :+:      :+:    :+:   */
+/*   stack_index.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lmatthes <lmatthes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 16:35:46 by lmatthes          #+#    #+#             */
-/*   Updated: 2026/01/19 16:42:38 by lmatthes         ###   ########.fr       */
+/*   Updated: 2026/01/19 23:07:25 by lmatthes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ static int	find_pos(const int *arr, int n, int v)
 	return (-1);
 }
 
-void	index_stack(t_stack *a)
+void	stack_index(t_stack *a)
 {
 	int		*arr;
 	int		n;
