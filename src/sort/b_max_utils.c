@@ -6,7 +6,7 @@
 /*   By: lmatthes <lmatthes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 19:24:48 by lmatthes          #+#    #+#             */
-/*   Updated: 2026/01/19 19:29:24 by lmatthes         ###   ########.fr       */
+/*   Updated: 2026/01/19 19:58:57 by lmatthes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ int	pos_of_max_index(t_stack *b)
 void	bring_pos_to_top_b(t_stack *b, int pos)
 {
 	int	len;
+	int	r;
 
 	len = stack_len(b);
 	if (len < 2 || pos < 0 || pos >= len)
@@ -47,6 +48,9 @@ void	bring_pos_to_top_b(t_stack *b, int pos)
 		while (pos-- > 0)
 			rb(b);
 	else
-		while (pos++ < len)
+	{
+		r = len - pos;
+		while (r-- > 0)
 			rrb(b);
+	}
 }
