@@ -6,7 +6,7 @@
 /*   By: lmatthes <lmatthes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 21:43:32 by lmatthes          #+#    #+#             */
-/*   Updated: 2026/01/19 19:12:06 by lmatthes         ###   ########.fr       */
+/*   Updated: 2026/01/19 19:30:51 by lmatthes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,5 +77,7 @@ void	error_exit(void);
 void	sort_three(t_stack *a);
 void	bring_index_to_top(t_stack *a, int target);
 void	sort_five(t_stack *a, t_stack *b);
+int		pos_of_max_index(t_stack *b);
+void	bring_pos_to_top_b(t_stack *b, int pos);
 
 #endif
