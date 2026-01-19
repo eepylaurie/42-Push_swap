@@ -6,7 +6,7 @@
 /*   By: lmatthes <lmatthes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 21:43:32 by lmatthes          #+#    #+#             */
-/*   Updated: 2026/01/19 16:18:40 by lmatthes         ###   ########.fr       */
+/*   Updated: 2026/01/19 16:35:03 by lmatthes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ void	stack_add_bottom(t_stack *s, t_node *n);
 int		stack_is_sorted(t_stack *s);
 void	stack_clear(t_stack *s);
 int		is_sorted(t_stack *a);
+void	index_stack(t_stack *a);
 
 // swap instructions
 void	sa(t_stack *a);
