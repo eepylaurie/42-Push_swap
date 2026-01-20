@@ -6,7 +6,7 @@
 /*   By: lmatthes <lmatthes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 18:36:26 by lmatthes          #+#    #+#             */
-/*   Updated: 2026/01/19 23:02:56 by lmatthes         ###   ########.fr       */
+/*   Updated: 2026/01/20 00:06:40 by lmatthes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	sort_chunk_bring_index_to_top(t_stack *a, int target)
 	int	pos;
 	int	len;
 
-	pos = sort_chunk_pos_of_index(a, target);
+	pos = pos_of_index(a, target);
 	len = stack_len(a);
 	if (pos < 0)
 		return ;
