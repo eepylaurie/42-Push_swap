@@ -6,7 +6,7 @@
 /*   By: lmatthes <lmatthes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 18:02:50 by lmatthes          #+#    #+#             */
-/*   Updated: 2026/01/20 17:31:38 by lmatthes         ###   ########.fr       */
+/*   Updated: 2026/01/20 17:50:08 by lmatthes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,15 +58,15 @@ void	sort_small_five(t_stack *a, t_stack *b)
 	len = stack_len(a);
 	if (len == 4)
 	{
-		sort_chunk_bring_index_to_top(a, 0);
+		sort_bring_index_to_top_a(a, 0);
 		op_pb(a, b);
 		sort_small_three(a);
 		op_pa(a, b);
 		return ;
 	}
-	sort_chunk_bring_index_to_top(a, 0);
+	sort_bring_index_to_top_a(a, 0);
 	op_pb(a, b);
-	sort_chunk_bring_index_to_top(a, 1);
+	sort_bring_index_to_top_a(a, 1);
 	op_pb(a, b);
 	sort_small_three(a);
 	op_pa(a, b);
