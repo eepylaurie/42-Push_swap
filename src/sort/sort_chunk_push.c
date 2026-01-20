@@ -6,20 +6,20 @@
 /*   By: lmatthes <lmatthes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 21:01:45 by lmatthes          #+#    #+#             */
-/*   Updated: 2026/01/20 16:57:02 by lmatthes         ###   ########.fr       */
+/*   Updated: 2026/01/20 17:25:24 by lmatthes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	sort_chunk_chunksize(int n)
+static int	sort_calc_chunk_size(int n)
 {
 	if (n <= 100)
 		return (20);
 	return (45);
 }
 
-static int	half_chunk(int chunk)
+static int	sort_half_chunk(int chunk)
 {
 	return (chunk / 2);
 }
@@ -32,7 +32,7 @@ void	sort_chunk_push(t_stack *a, t_stack *b)
 	int	pushed;
 
 	n = stack_len(a);
-	chunk = sort_chunk_chunksize(n);
+	chunk = sort_calc_chunk_size(n);
 	limit = chunk;
 	pushed = 0;
 	while (pushed < n)
@@ -41,7 +41,7 @@ void	sort_chunk_push(t_stack *a, t_stack *b)
 		{
 			op_pb(a, b);
 			pushed++;
-			if (b->top->idx < (limit - half_chunk(chunk)))
+			if (b->top->idx < (limit - sort_half_chunk(chunk)))
 				op_rb(b);
 			if (pushed == limit)
 				limit += chunk;

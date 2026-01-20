@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_small_three.c                                 :+:      :+:    :+:   */
+/*   sort_small.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lmatthes <lmatthes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 18:02:50 by lmatthes          #+#    #+#             */
-/*   Updated: 2026/01/20 14:28:46 by lmatthes         ###   ########.fr       */
+/*   Updated: 2026/01/20 17:31:38 by lmatthes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	last_index(t_stack *a)
+static int	sort_last_index(t_stack *a)
 {
 	t_node	*cur;
 
@@ -30,7 +30,7 @@ void	sort_small_three(t_stack *a)
 
 	x = a->top->idx;
 	y = a->top->next->idx;
-	z = last_index(a);
+	z = sort_last_index(a);
 	if (x < y && y < z)
 		return ;
 	if (x > y && y < z && x < z)
