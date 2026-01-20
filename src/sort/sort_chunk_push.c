@@ -6,11 +6,18 @@
 /*   By: lmatthes <lmatthes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 21:01:45 by lmatthes          #+#    #+#             */
-/*   Updated: 2026/01/19 23:03:17 by lmatthes         ###   ########.fr       */
+/*   Updated: 2026/01/20 16:57:02 by lmatthes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+static int	sort_chunk_chunksize(int n)
+{
+	if (n <= 100)
+		return (20);
+	return (45);
+}
 
 static int	half_chunk(int chunk)
 {

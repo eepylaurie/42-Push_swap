@@ -6,13 +6,13 @@
 /*   By: lmatthes <lmatthes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 19:45:32 by lmatthes          #+#    #+#             */
-/*   Updated: 2026/01/19 22:55:39 by lmatthes         ###   ########.fr       */
+/*   Updated: 2026/01/20 16:21:58 by lmatthes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sort_chunk_pullback(t_stack *a, t_stack *b)
+void	sort_chunk_pull(t_stack *a, t_stack *b)
 {
 	int	pos;
 

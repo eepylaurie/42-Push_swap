@@ -6,7 +6,7 @@
 /*   By: lmatthes <lmatthes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 21:43:32 by lmatthes          #+#    #+#             */
-/*   Updated: 2026/01/19 22:49:46 by lmatthes         ###   ########.fr       */
+/*   Updated: 2026/01/20 16:59:23 by lmatthes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,12 +70,11 @@ void	error_exit(void);
 
 // sorting
 void	sort_small_three(t_stack *a);
-void	sort_chunk_bring_index_to_top(t_stack *a, int target);
+void	sort_bring_index_to_top(t_stack *a, int target);
 void	sort_small_five(t_stack *a, t_stack *b);
 int		sort_chunk_pos_of_max_index(t_stack *b);
 void	sort_chunk_bring_pos_to_top_b(t_stack *b, int pos);
-void	sort_chunk_pullback(t_stack *a, t_stack *b);
-int		sort_chunk_chunksize(int n);
+void	sort_chunk_pull(t_stack *a, t_stack *b);
 void	sort_chunk_push(t_stack *a, t_stack *b);
 void	sort_chunk(t_stack *a, t_stack *b);
 
