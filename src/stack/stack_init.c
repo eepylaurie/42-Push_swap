@@ -6,7 +6,7 @@
 /*   By: lmatthes <lmatthes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/17 15:15:12 by lmatthes          #+#    #+#             */
-/*   Updated: 2026/01/17 17:22:58 by lmatthes         ###   ########.fr       */
+/*   Updated: 2026/01/20 14:18:42 by lmatthes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,4 +19,17 @@ void	stack_init(t_stack *s)
 	s->top = NULL;
 	s->bot = NULL;
 	s->size = 0;
+}
+
+void	stack_clear(t_stack *s)
+{
+	t_node	*tmp;
+
+	if (!s)
+		return ;
+	while (s->top)
+	{
+		tmp = stack_pop_top(s);
+		free(tmp);
+	}
 }
