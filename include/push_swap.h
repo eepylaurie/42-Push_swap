@@ -6,7 +6,7 @@
 /*   By: lmatthes <lmatthes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 21:43:32 by lmatthes          #+#    #+#             */
-/*   Updated: 2026/01/20 18:19:34 by lmatthes         ###   ########.fr       */
+/*   Updated: 2026/01/21 16:14:32 by lmatthes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,14 +69,15 @@ void	parse_args(int argc, char **argv, t_stack *a);
 void	error_exit(void);
 
 // sorting
+void	sort_dispatch(t_stack *a, t_stack *b);
 void	sort_small_three(t_stack *a);
-void	sort_bring_index_to_top_a(t_stack *a, int target);
 void	sort_small_five(t_stack *a, t_stack *b);
-int		sort_find_pos_of_max_index(t_stack *s);
-void	sort_bring_pos_to_top_b(t_stack *b, int pos);
-void	sort_bring_pos_to_top_a(t_stack *a, int pos);
-void	sort_chunk_pull(t_stack *a, t_stack *b);
-void	sort_chunk_push(t_stack *a, t_stack *b);
 void	sort_chunk(t_stack *a, t_stack *b);
+void	sort_chunk_push(t_stack *a, t_stack *b);
+void	sort_chunk_pull(t_stack *a, t_stack *b);
+int		sort_find_pos_of_max_index(t_stack *s);
+void	sort_bring_pos_to_top_a(t_stack *a, int pos);
+void	sort_bring_pos_to_top_b(t_stack *b, int pos);
+void	sort_bring_index_to_top_a(t_stack *a, int target);
 
 #endif
