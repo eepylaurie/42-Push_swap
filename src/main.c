@@ -6,7 +6,7 @@
 /*   By: lmatthes <lmatthes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/17 15:20:22 by lmatthes          #+#    #+#             */
-/*   Updated: 2026/01/19 23:06:12 by lmatthes         ###   ########.fr       */
+/*   Updated: 2026/01/21 16:15:53 by lmatthes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,13 @@ int	main(int argc, char **argv)
 	stack_init(&a);
 	stack_init(&b);
 	parse_args(argc, argv, &a);
-	if (stack_is_sorted(&a))
+	if (stack_len(&a) < 2 || stack_is_sorted(&a))
+	{
+		stack_clear(&a);
+		stack_clear(&b);
 		return (0);
-	stack_index(&a);
-	if (stack_len(&a) <= 3)
-		sort_small_three(&a);
-	else if (stack_len(&a) <= 5)
-		sort_small_five(&a, &b);
-	else
-		sort_chunk(&a, &b);
+	}
+	sort_dispatch(&a, &b);
 	stack_clear(&a);
 	stack_clear(&b);
 	return (0);

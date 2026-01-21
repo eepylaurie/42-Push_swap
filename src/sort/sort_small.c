@@ -6,21 +6,11 @@
 /*   By: lmatthes <lmatthes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 18:02:50 by lmatthes          #+#    #+#             */
-/*   Updated: 2026/01/20 17:50:08 by lmatthes         ###   ########.fr       */
+/*   Updated: 2026/01/20 18:54:03 by lmatthes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-static int	sort_last_index(t_stack *a)
-{
-	t_node	*cur;
-
-	cur = a->top;
-	while (cur->next)
-		cur = cur->next;
-	return (cur->idx);
-}
 
 void	sort_small_three(t_stack *a)
 {
@@ -30,7 +20,7 @@ void	sort_small_three(t_stack *a)
 
 	x = a->top->idx;
 	y = a->top->next->idx;
-	z = sort_last_index(a);
+	z = a->top->next->next->idx;
 	if (x < y && y < z)
 		return ;
 	if (x > y && y < z && x < z)
@@ -69,6 +59,8 @@ void	sort_small_five(t_stack *a, t_stack *b)
 	sort_bring_index_to_top_a(a, 1);
 	op_pb(a, b);
 	sort_small_three(a);
+	if (b->top && b->top->next && b->top->idx < b->top->next->idx)
+		op_sb(b);
 	op_pa(a, b);
 	op_pa(a, b);
 }

@@ -6,13 +6,13 @@
 /*   By: lmatthes <lmatthes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 16:39:50 by lmatthes          #+#    #+#             */
-/*   Updated: 2026/01/20 18:10:59 by lmatthes         ###   ########.fr       */
+/*   Updated: 2026/01/20 19:19:31 by lmatthes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	sort_find_pos_of_index(t_stack *s, int target)
+static int	sort_find_pos_of_index(t_stack *s, int target)
 {
 	int		pos;
 	t_node	*cur;
@@ -40,7 +40,7 @@ int	sort_find_pos_of_max_index(t_stack *s)
 		return (-1);
 	pos = 0;
 	best_pos = 0;
-	best_idx = -1;
+	best_idx = s->top->idx;
 	cur = s->top;
 	while (cur)
 	{
@@ -52,6 +52,7 @@ int	sort_find_pos_of_max_index(t_stack *s)
 		pos++;
 		cur = cur->next;
 	}
+	return (best_pos);
 }
 
 void	sort_bring_pos_to_top_a(t_stack *a, int pos)

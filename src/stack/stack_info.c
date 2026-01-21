@@ -6,7 +6,7 @@
 /*   By: lmatthes <lmatthes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/20 13:50:59 by lmatthes          #+#    #+#             */
-/*   Updated: 2026/01/20 14:06:08 by lmatthes         ###   ########.fr       */
+/*   Updated: 2026/01/20 18:59:31 by lmatthes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,15 +30,5 @@ int	stack_is_sorted(t_stack *s)
 
 int	stack_len(t_stack *s)
 {
-	int		len;
-	t_node	*cur;
-
-	len = 0;
-	cur = s->top;
-	while (cur)
-	{
-		len++;
-		cur = cur->next;
-	}
-	return (len);
+	return (s->size);
 }
