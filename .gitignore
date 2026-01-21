@@ -1,5 +1,7 @@
 checker_Mac
 push_swap
+push_swap_test.sh
+traces.txt
 
 # Prerequisites
 *.d
