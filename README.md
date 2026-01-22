@@ -46,6 +46,11 @@ The algorithm repeatedly brings the **largest value** in **B** to the top and pu
 
 This approach allows large inputs to be sorted efficiently within the required operation limits.
 
+### ⏱️ Complexity
+
+The chunk-based strategy runs in **O(n²)** in the worst case due to stack rotations, but chunking significantly reduces the average number of operations.
+This keeps the move count within the expected limits for typical inputs (≤ 500 values).
+
 ## 🧬 Data Structures
 
 Each stack is implemented as a **doubly linked list**.
