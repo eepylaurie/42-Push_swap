@@ -8,57 +8,21 @@
 
 The program receives a sequence of integers, places them in stack **A**, and prints the operations required to sort the stack in ascending order.
 
-This project focuses on:
+### Allowed Operations
 
-- algorithmic problem solving
-- stack-based data structures
-- optimization under constraints
-- and precise memory handling
-
-This implementation uses a **chunk-based sorting algorithm**.
-
-## Instructions
-
-### Build
-
-``` bash
-make
-```
-
-This creates the `push_swap` executable.
-
-### Run
-
-``` bash
-./pushswap 3 2 1
-```
-
-Example output:
-
-``` bash
-sa
-rra
-```
-
-To verify correctness using the checker:
-
-``` bash
-./push_swap 3 2 1 | ./checker_linux 3 2 1
-```
-
-If the output is correct, the checker prints:
-
-``` bash
-OK
-```
-
-### Clean / Rebuild
-
-``` bash
-make clean
-make fclean
-make re
-```
+| Operation | Effect on Stack A | Effect on Stack B | Description |
+| --------- | ----------------- | ----------------- | ----------- |
+| `sa` | swap top 2 elements | - | Swap the first 2 elements of stack A. |
+| `sb` | - | swap top 2 elements | Swap the first 2 elements of stack B. |
+| `ss` | swap top 2 elements | swap top 2 elements | Perform `sa` and `sb` simultaneously. |
+| `pa` | push from B to A | pop top | Move the top element of B to the top of A. |
+| `pb` | pop top | push from A to B | Move the top element of A to the top of B. |
+| `ra` | rotate up | - | Move the top element from A to the bottom. |
+| `rb` | - | rotate up | Move the top element from B to the bottom. |
+| `rr` | rotate up | rotate up | Perform `ra` and `rb` simultaneously. |
+| `rra` | rotate down | - | Move the bottom element of A to the top. |
+| `rrb` | - | rotate down | Move the bottom element of B to the top. |
+| `rrr` | rotate down | rotate down | Perform `rra` and `rrb` simultaneously. |
 
 ## Algorithm Overview
 
@@ -108,7 +72,54 @@ typedef struct	s_stack
 - `next`/`prev` allow forward and reverse rotations
 - `top`, `bot` and `size` allow fast stack operations
 
+## Instructions
+
+### Build
+
+``` bash
+make
+```
+
+This creates the `push_swap` executable.
+
+### Run
+
+``` bash
+./pushswap 3 2 1
+```
+
+Example output:
+
+``` bash
+sa
+rra
+```
+
+To verify correctness using the checker:
+
+``` bash
+./push_swap 3 2 1 | ./checker_linux 3 2 1
+```
+
+If the output is correct, the checker prints:
+
+``` bash
+OK
+```
+
+### Clean / Rebuild
+
+``` bash
+make clean
+make fclean
+make re
+```
+
 ## Resources
+
+- [Push swap 42 visualizer](https://push-swap42-visualizer.vercel.app/)
+- [Linked List in C](https://www.geeksforgeeks.org/c/linked-list-in-c/)
+- [Doubly Linked List in C](https://www.geeksforgeeks.org/c/doubly-linked-list-in-c/)
 
 ### AI Usage
 
