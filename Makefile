@@ -6,7 +6,7 @@
 #    By: lmatthes <lmatthes@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/01/20 19:07:05 by lmatthes          #+#    #+#              #
-#    Updated: 2026/01/21 17:16:45 by lmatthes         ###   ########.fr        #
+#    Updated: 2026/01/22 20:27:50 by lmatthes         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,8 +33,11 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	@mkdir -p $(dir $@)
 	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
-fclean: clean
+clean:
 	$(RM) $(OBJ_DIR)
+
+fclean: clean
+	$(RM) $(NAME)
 
 re: fclean all
 
