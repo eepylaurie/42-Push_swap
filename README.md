@@ -2,7 +2,7 @@
 
 # Push_swap
 
-## Description
+## ℹ️ Description
 
 `Push_swap` is a program that sorts a list of integers using **two stacks** and a **restricted set of operations**.
 
@@ -24,7 +24,7 @@ The program receives a sequence of integers, places them in stack **A**, and pri
 | `rrb` | - | rotate down | Move the bottom element of B to the top. |
 | `rrr` | rotate down | rotate down | Perform `rra` and `rrb` simultaneously. |
 
-## Algorithm Overview
+## 🧠 Algorithm Overview
 
 This project uses a **chunk-based sorting strategy**.
 
@@ -46,7 +46,7 @@ The algorithm repeatedly brings the **largest value** in **B** to the top and pu
 
 This approach allows large inputs to be sorted efficiently within the required operation limits.
 
-## Data Structures
+## 🧬 Data Structures
 
 Each stack is implemented as a **doubly linked list**.
 
@@ -72,7 +72,7 @@ typedef struct	s_stack
 - `next`/`prev` allow forward and reverse rotations
 - `top`, `bot` and `size` allow fast stack operations
 
-## Instructions
+## ⚙️ Instructions
 
 ### Build
 
@@ -115,7 +115,7 @@ make fclean
 make re
 ```
 
-## Resources
+## 🌐 Resources
 
 - [Push swap 42 visualizer](https://push-swap42-visualizer.vercel.app/)
 - [Linked List in C](https://www.geeksforgeeks.org/c/linked-list-in-c/)
