@@ -6,7 +6,7 @@
 /*   By: lmatthes <lmatthes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 21:43:32 by lmatthes          #+#    #+#             */
-/*   Updated: 2026/01/27 23:43:17 by lmatthes         ###   ########.fr       */
+/*   Updated: 2026/01/28 00:10:16 by lmatthes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,15 @@ typedef struct s_stack
 	t_node	*bot;
 	int		size;
 }	t_stack;
+
+typedef struct s_atoi_ctx
+{
+	const char	*p;
+	size_t		len;
+	size_t		i;
+	long long	sign;
+	int			*ok;
+}	t_atoi_ctx;
 
 // stack functions
 void	stack_init(t_stack *s);

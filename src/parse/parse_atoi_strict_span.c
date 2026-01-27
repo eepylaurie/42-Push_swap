@@ -6,7 +6,7 @@
 /*   By: lmatthes <lmatthes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/18 19:48:08 by lmatthes          #+#    #+#             */
-/*   Updated: 2026/01/19 22:53:05 by lmatthes         ###   ########.fr       */
+/*   Updated: 2026/01/28 00:10:59 by lmatthes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,37 +33,41 @@ static long long	get_sign(const char *p, size_t len, size_t *i, int *ok)
 	return (sign);
 }
 
-static int	accumulate_digit(long long *res, long long sign, char c)
+static int	accumulate_digit(long long *res, int digit)
 {
-	*res = (*res * 10) + (c - '0');
-	if (sign * (*res) > INT_MAX || sign * (*res) < INT_MIN)
+	if (*res > (LLONG_MAX - digit) / 10)
 		return (0);
+	*res = (*res * 10) + digit;
 	return (1);
 }
 
-static int	parse_digits(const char *p, size_t len, size_t i, long long sign)
+static int	parse_digits(t_atoi_ctx *ctx)
 {
 	long long	res;
+	long long	limit;
 
-	if (i >= len || !ft_isdigit(p[i]))
-		return (0);
+	if (ctx->i >= ctx->len || !ft_isdigit(ctx->p[ctx->i]))
+		return (*(ctx->ok) = 0, 0);
 	res = 0;
-	while (i < len)
+	while (ctx->i < ctx->len)
 	{
-		if (!ft_isdigit(p[i]))
-			return (0);
-		if (!accumulate_digit(&res, sign, p[i]))
-			return (0);
-		i++;
+		if (!ft_isdigit(ctx->p[ctx->i]))
+			return (*(ctx->ok) = 0, 0);
+		if (!accumulate_digit(&res, ctx->p[ctx->i] - '0'))
+			return (*(ctx->ok) = 0, 0);
+		ctx->i++;
 	}
-	return ((int)(sign * res));
+	limit = (long long)INT_MAX;
+	if (ctx->sign < 0)
+		limit = -(long long)INT_MIN;
+	if (res > limit)
+		return (*(ctx->ok) = 0, 0);
+	return ((int)(ctx->sign * res));
 }
 
 int	parse_atoi_strict_span(const char *p, size_t len, int *ok)
 {
-	size_t		i;
-	long long	sign;
-	int			val;
+	t_atoi_ctx	ctx;
 
 	*ok = 1;
 	if (!p || len == 0)
@@ -71,16 +75,12 @@ int	parse_atoi_strict_span(const char *p, size_t len, int *ok)
 		*ok = 0;
 		return (0);
 	}
-	i = 0;
-	sign = get_sign(p, len, &i, ok);
+	ctx.p = p;
+	ctx.len = len;
+	ctx.i = 0;
+	ctx.ok = ok;
+	ctx.sign = get_sign(p, len, &ctx.i, ok);
 	if (*ok == 0)
 		return (0);
-	val = parse_digits(p, len, i, sign);
-	if (val == 0 && !(len == 1 && p[0] == '0') && !(len == 2
-			&& (p[0] == '+' || p[0] == '-') && p[1] == '0'))
-	{
-		*ok = 0;
-		return (0);
-	}
-	return (val);
+	return (parse_digits(&ctx));
 }
