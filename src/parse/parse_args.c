@@ -6,7 +6,7 @@
 /*   By: lmatthes <lmatthes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/18 20:22:11 by lmatthes          #+#    #+#             */
-/*   Updated: 2026/01/25 21:06:00 by lmatthes         ###   ########.fr       */
+/*   Updated: 2026/01/27 20:44:13 by lmatthes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,16 @@
 static int	ft_isspace(int c)
 {
 	return (c == ' ' || (c >= 9 && c <= 13));
+}
+
+static void	stack_add_checked(t_stack *a, int value)
+{
+	t_node	*n;
+
+	n = stack_node_new(value);
+	if (!n)
+		error_exit(a, NULL, NULL);
+	stack_add_bottom(a, n);
 }
 
 static int	parse_one_arg_into_stack(const char *s, t_stack *a)
@@ -38,8 +48,8 @@ static int	parse_one_arg_into_stack(const char *s, t_stack *a)
 			i++;
 		value = parse_atoi_strict_span(s + token_start, i - token_start, &ok);
 		if (!ok)
-			error_exit();
-		stack_add_bottom(a, stack_node_new(value));
+			error_exit(a, NULL, NULL);
+		stack_add_checked(a, value);
 		found_number = 1;
 	}
 	return (found_number);
@@ -63,8 +73,10 @@ void	parse_args(int argc, char **argv, t_stack *a)
 		i++;
 	}
 	if (!found_any_number)
-		error_exit();
+		error_exit(a, NULL, NULL);
 	values = stack_to_array(a, &count);
-	parse_check_duplicates(values, count);
+	if (!values)
+		error_exit(a, NULL, NULL);
+	parse_check_duplicates(values, count, a);
 	free(values);
 }

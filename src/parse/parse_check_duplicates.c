@@ -6,13 +6,13 @@
 /*   By: lmatthes <lmatthes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/17 22:55:25 by lmatthes          #+#    #+#             */
-/*   Updated: 2026/01/19 22:53:15 by lmatthes         ###   ########.fr       */
+/*   Updated: 2026/01/27 18:44:59 by lmatthes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	parse_check_duplicates(const int *arr, int n)
+void	parse_check_duplicates(int *arr, int n, t_stack *a)
 {
 	int	i;
 	int	j;
@@ -24,7 +24,7 @@ void	parse_check_duplicates(const int *arr, int n)
 		while (j < n)
 		{
 			if (arr[i] == arr[j])
-				error_exit();
+				error_exit(a, NULL, arr);
 			j++;
 		}
 		i++;

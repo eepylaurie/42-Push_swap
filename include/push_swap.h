@@ -6,7 +6,7 @@
 /*   By: lmatthes <lmatthes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 21:43:32 by lmatthes          #+#    #+#             */
-/*   Updated: 2026/01/21 16:14:32 by lmatthes         ###   ########.fr       */
+/*   Updated: 2026/01/27 18:45:06 by lmatthes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,11 +62,11 @@ void	op_rrr(t_stack *a, t_stack *b);
 
 // parsing
 int		parse_atoi_strict_span(const char *p, size_t len, int *ok);
-void	parse_check_duplicates(const int *arr, int n);
+void	parse_check_duplicates(int *arr, int n, t_stack *a);
 void	parse_args(int argc, char **argv, t_stack *a);
 
 // error
-void	error_exit(void);
+void	error_exit(t_stack *a, t_stack *b, int *values);
 
 // sorting
 void	sort_dispatch(t_stack *a, t_stack *b);

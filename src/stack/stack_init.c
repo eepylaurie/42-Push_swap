@@ -6,7 +6,7 @@
 /*   By: lmatthes <lmatthes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/17 15:15:12 by lmatthes          #+#    #+#             */
-/*   Updated: 2026/01/20 14:18:42 by lmatthes         ###   ########.fr       */
+/*   Updated: 2026/01/27 18:27:52 by lmatthes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,7 @@ void	stack_clear(t_stack *s)
 		tmp = stack_pop_top(s);
 		free(tmp);
 	}
+	s->top = NULL;
+	s->bot = NULL;
+	s->size = 0;
 }

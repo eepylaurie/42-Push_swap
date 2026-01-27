@@ -6,7 +6,7 @@
 /*   By: lmatthes <lmatthes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 15:52:44 by lmatthes          #+#    #+#             */
-/*   Updated: 2026/01/19 15:56:51 by lmatthes         ###   ########.fr       */
+/*   Updated: 2026/01/27 20:45:11 by lmatthes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	*stack_to_array(t_stack *a, int *n)
 	}
 	arr = (int *)malloc(sizeof(int) * (*n));
 	if (!arr)
-		error_exit();
+		return (NULL);
 	i = 0;
 	cur = a->top;
 	while (cur)

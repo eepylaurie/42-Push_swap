@@ -6,7 +6,7 @@
 /*   By: lmatthes <lmatthes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 16:35:46 by lmatthes          #+#    #+#             */
-/*   Updated: 2026/01/19 23:07:25 by lmatthes         ###   ########.fr       */
+/*   Updated: 2026/01/27 20:46:24 by lmatthes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,8 @@ void	stack_index(t_stack *a)
 	t_node	*cur;
 
 	arr = stack_to_array(a, &n);
+	if (!arr)
+		error_exit(a, NULL, NULL);
 	sort_int_array(arr, n);
 	cur = a->top;
 	while (cur)
